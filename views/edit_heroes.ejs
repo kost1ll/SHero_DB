@@ -1,0 +1,53 @@
+<%- include('layout/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-success">
+                    <h3 class="text-light">Edit Hero (<%= hero.nickname %>)</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/update/<%= hero._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="nickname">Nickname</label>
+                            <input type="text" name="nickname" class="form-control form-control-lg"
+                                   value="<%= hero.nickname %>" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="real_name">Real name</label>
+                            <input type="text" name="real_name" class="form-control form-control-lg"
+                                   value="<%= hero.real_name %>" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="origin_description">Origin description</label>
+                            <textarea name="origin_description" class="form-control form-control-lg" rows="3"
+                                      required><%= hero.origin_description %></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="superpowers">Superpowers</label>
+                            <textarea name="superpowers" class="form-control form-control-lg" rows="3"
+                                      required><%= hero.superpowers %></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="catch_phrase">Catch phrase</label>
+                            <textarea name="catch_phrase" class="form-control form-control-lg" rows="3"
+                                      required><%= hero.catch_phrase %></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image">image</label>
+                            <input type="file" name="image" class="form-control form-control-lg" />
+                            <img src="/<%= hero.image %>" width="100" class="img-thumbnail mt-1">
+                        </div>
+                        <input type="hidden" name="old_image" value="<%= hero.image %>">
+                        <div class="mb-3 d-grid">
+                            <input type="submit" name="submit" class="btn btn-success btn-lg" value="Update Hero"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>

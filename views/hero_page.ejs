@@ -1,0 +1,17 @@
+<%- include('layout/header') %>
+<div class="container">
+    <div class="row my-4">
+        <div class="clearfix">
+            <img src="/<%= hero.image %>" width="10vw" height="500vh" class="col-md-6 float-md-end mb-3 ms-md-3">
+            <p><strong>Nickname</strong>: <%= hero.nickname %></p>
+            <p><strong>Origin description</strong>: <%= hero.origin_description %></p>
+            <p><strong>Superpowers</strong>: <%= hero.superpowers %></p>
+            <p><strong>Catchphrase</strong>: <%= hero.catch_phrase %></p>
+        </div>
+    </div>
+    <div class="row">
+        <a href="/edit/<%= hero.id %>" class="text-success"><i class="fas fa-edit fa-lg mx-1 my-3"></i>EDIT</a>
+        <a href="/delete/<%= hero.id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1 my-3"></i>DELETE</a>
+    </div>
+</div>
+<%- include('layout/footer') %>

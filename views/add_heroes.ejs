@@ -1,0 +1,51 @@
+<%- include('layout/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-secondary">
+                    <h3 class="text-light">Add New Hero</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="nickname">Nickname</label>
+                            <input type="text" name="nickname" class="form-control form-control-lg"
+                                   placeholder="Enter nickname" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="real_name">Real name</label>
+                            <input type="text" name="real_name" class="form-control form-control-lg"
+                                   placeholder="Enter real name" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="origin_description">Origin description</label>
+                            <textarea name="origin_description" class="form-control form-control-lg"
+                                      placeholder="Enter origin description" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="superpowers">Superpowers</label>
+                            <textarea name="superpowers" class="form-control form-control-lg"
+                                      placeholder="Enter superpowers" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="catch_phrase">Catch phrase</label>
+                            <textarea name="catch_phrase" class="form-control form-control-lg"
+                                      placeholder="Enter catch phrase" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image">image</label>
+                            <input type="file" name="image" class="form-control form-control-lg"  required/>
+                        </div>
+                        <div class="mb-3 d-grid">
+                            <input type="submit" name="submit" class="btn btn-secondary btn-lg" value="Add Hero"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>
